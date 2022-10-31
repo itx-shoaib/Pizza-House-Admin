@@ -1,0 +1,17 @@
+.sidemenu{
+    display: none !important;
+}
+
+li{
+    display: contents;
+}
+
+.sidemenuitems{
+    color: black !important;
+}
+
+@media (max-width:992px){
+    .sidemenu{
+        display: contents !important;
+    }
+}

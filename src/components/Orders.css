@@ -1,0 +1,36 @@
+.table {
+  width: 95%;
+  border-radius: 20px;
+}
+
+.primary {
+  background-color: blue;
+}
+
+.info {
+  background-color: #03cfb7;
+}
+
+.idHover:hover {
+  color: rgb(11, 11, 114);
+}
+
+.tabOrder,
+.tabCard {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .desktopCard {
+    display: none;
+  }
+  .tabOrder {
+    display: flex;
+    font-size: larger;
+  }
+
+  .tabCard {
+    display: flex;
+    text-align: center;
+  }
+}

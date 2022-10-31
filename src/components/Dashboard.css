@@ -1,0 +1,86 @@
+.openh1{
+    box-shadow: rgba(90, 90, 90, 0.35) 0px 5px 15px;
+    border-radius: 25px;
+    display: inline-flex !important;
+    width: 100%;
+   }   
+ 
+ .mlauto{
+  margin-left: auto !important;
+ }
+
+ .editpencilbtn{
+  background-color: red !important;
+  border-radius: 50px !important;
+  width: 45px;
+  height: 45px;
+  font-size: 20px !important;
+  color: white !important;
+  border: 1px solid red !important;
+ }
+
+ .editpencilbtn:hover{
+  background-color: darkred !important;
+  border: 1px solid darkred !important;
+ }
+  
+
+ .checkiconclr{
+  color:darkturquoise;
+  font-size: 50px;
+}
+
+.cardtitleclr{
+  color: blue;
+}
+
+.cardinfoclr{
+  color: green;
+}
+
+.accordion-button::after {
+  content: none;
+}
+
+
+   .dashboardcards{
+    box-shadow: rgba(90, 90, 90, 0.35) 0px 5px 15px;
+    border-radius: 25px;
+    margin: 40px 15px;
+    padding: 40px 20px;
+    width: 100%;
+   }
+  
+.cardsrow{
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.cardslink{
+  width: 25% !important;
+}
+
+   @media
+  (max-width: 992px)
+  {
+  .dashboardcards{
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+   }
+   .cardsrow{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .cardslink{
+    width: 100% !important;
+  }
+  }
+
+.liveStatus {
+  color: #44D2CB;
+  background-color: #CDF5F1;
+  text-align: center;
+  width: 40px;
+  border-radius: 4px;
+}

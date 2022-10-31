@@ -1,0 +1,112 @@
+.cardattributes{
+border: 0;
+}
+.titleheader{
+    background-color: #2596be;
+    color: white;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+.titleheaderaccepted{
+    background-color: #dc3444;
+    color: white;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+.titleheadercompleted{
+    background-color: #08ccb4;
+    color: white;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+.card-title{
+    font-size: 20px;
+}
+.emailformat{
+    font-size: 16px;
+    color: #343c84;
+    font-weight: bold;
+}
+.addresstime{
+    font-size: 14px !important;
+    color: black;
+}
+.actionbtns{
+    background-color: #343c84;
+    color: white;
+    border-radius: 12px;
+    width: 80%;
+}
+.btnrow{
+    margin-top: 20px;
+}
+.Stroketext{
+    padding: 3px;
+    background-color: #2596be;
+    color: white;
+    border-radius: 10px;
+    font-size: 8px;
+    text-align: center;
+}
+.Stroketexts{
+    padding: 3px;
+    background-color: #343c84;
+    color: white;
+    border-radius: 10px;
+    font-size: 8px;
+    text-align: center;
+}
+
+.accbtn{
+    border: 0;
+    background-color: transparent;
+}
+.cursor{
+    cursor: pointer;
+}
+.accitem{
+    border: 0;
+    border-bottom: 1px solid silver;
+}
+.bordersofcard{
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-bottom: 1px solid silver;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+@media (max-width: 576px){
+    .cardattributes{
+        margin-bottom: 20px;
+        }
+        .titleheader{
+            text-align: center;
+        }
+        .titleheaderaccepted{
+            text-align: center;
+        }
+        .titleheadercompleted{
+            text-align: center;
+        }
+        .btnrow{
+            text-align: center;
+        }
+        .actionbtns{
+            margin-bottom: 10px;
+        }
+        .imghead{
+            display: none;
+        }
+        .Stroketext{
+            /* width: 30%; */
+            padding: 5px;
+            font-size: large;
+        }
+        .Stroketexts{
+            /* width: 30%; */
+            padding: 5px;
+            font-size: large;
+        }
+}

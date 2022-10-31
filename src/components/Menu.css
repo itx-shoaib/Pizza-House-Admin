@@ -1,0 +1,15 @@
+.accordion-button::after{
+    margin-left: 0 !important;
+}
+
+@media(max-width:576px)
+{
+    .menuresponsive{
+        display: block !important;
+        flex-direction: row !important;
+    }
+    .menu-buttons{
+        margin: 10px !important;
+        display: flex !important;
+    }
+}
