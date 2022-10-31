@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ function SigninPage() {
 
       // setloading(true)
       const result = (await axios.post('http://localhost:5000/api/admin/loginadmin', user)).data;
-      console.log(result.data)
+
 
       localStorage.setItem('currentuser', JSON.stringify(result.data));
 
@@ -136,7 +136,8 @@ function SigninPage() {
           <div className="col-md-8 responsiveness">
             <img
               className="signinimg"
-              src="https://goldenfrysedgley.co.uk/admin2/img/photos/bg1.webp" />
+              src="https://goldenfrysedgley.co.uk/admin2/img/photos/bg1.webp"
+              alt=".." />
           </div>
         </div>
       </div>
