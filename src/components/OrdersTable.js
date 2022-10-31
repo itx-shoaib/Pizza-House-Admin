@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Orders.css";
 import { Link } from "react-router-dom";
 import { DatePicker, Space } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import moment from "moment";
 
 const { RangePicker } = DatePicker;

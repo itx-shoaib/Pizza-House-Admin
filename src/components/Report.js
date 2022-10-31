@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
 import { DatePicker, Space } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import moment from "moment";
 import ReactPaginate from 'react-paginate';
 const { RangePicker } = DatePicker;
@@ -36,7 +36,7 @@ function Report() {
     console.log(`Loading orderHistory from ${itemOffset} to ${endOffset}`);
     setorderReport(duplicateorderReport.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(duplicateorderReport.length / 6));
-  }, [itemOffset,orderReport]);
+  }, [itemOffset, orderReport]);
 
   var orderData = [
     {
@@ -67,7 +67,7 @@ function Report() {
     if (e !== "-- Select an option --") {
 
       const tempresturants = duplicateorderReport.filter(
-        (Report) =>Report.ID === parseInt(e)
+        (Report) => Report.ID === parseInt(e)
       );
       setorderReport(tempresturants);
     } else {
@@ -78,24 +78,25 @@ function Report() {
   function filterByDate(dates) {
     setfromdate(moment(dates[0]).format("DD-MM-YYYY"));
     settodate(moment(dates[1]).format("DD-MM-YYYY"));
-   
-    if(dates[0] && dates[1]){
+
+    if (dates[0] && dates[1]) {
       const temporders = duplicateorderReport.filter(
         (order) => {
           console.log(Date.parse(dates[0]._d)
-            ,Date.parse(order.datetime),Date.parse(dates[1]._d)
-            )
-          return Date.parse(dates[0]._d)<Date.parse(order.datetime)&&Date.parse(dates[1]._d)>Date.parse(order.datetime)}
+            , Date.parse(order.datetime), Date.parse(dates[1]._d)
+          )
+          return Date.parse(dates[0]._d) < Date.parse(order.datetime) && Date.parse(dates[1]._d) > Date.parse(order.datetime)
+        }
       );
       setorderReport(temporders);
       // setOrders(temporders);
     }
-    else{
+    else {
       setorderReport(orderReport)
     }
 
     // alert(fromdate)
-    
+
 
     // var temp = []
     // var availablity = false;
@@ -111,9 +112,9 @@ function Report() {
     //   else{
     //     alert("In the else")
     //   }
-      
+
     // }
- 
+
   }
 
   useEffect(() => {
@@ -132,20 +133,20 @@ function Report() {
       }
     }
     fetchData();
-  
+
   }, [])
-  
+
   return (
     <>
       <Navbar />
 
       <div className="container-fluid">
         <div className="row flex-nowrap">
-        <div className="col-auto col-lg-3 col-xl-2 px-sm-2 sidebar">
+          <div className="col-auto col-lg-3 col-xl-2 px-sm-2 sidebar">
             <div className="d-flex flex-column align-items-center px-3 pt-2 min-vh-100">
               <h5 className="my-5 text-center">
                 {getstatus === "true" &&
-                JSON.parse(localStorage.getItem("currentuser"))[0].role ===
+                  JSON.parse(localStorage.getItem("currentuser"))[0].role ===
                   1 ? (
                   <>{JSON.parse(localStorage.getItem("currentuser"))[0].name}</>
                 ) : JSON.parse(localStorage.getItem("currentuser"))[0].role ===
@@ -160,7 +161,7 @@ function Report() {
                 id="menu"
               >
                 {getstatus === "true" &&
-                JSON.parse(localStorage.getItem("currentuser"))[0].role ===
+                  JSON.parse(localStorage.getItem("currentuser"))[0].role ===
                   1 ? (
                   <>
                     <li className="nav-item">
@@ -217,10 +218,9 @@ function Report() {
                     </li>
                     <li className="nav-item">
                       <Link
-                        to={`/setting/${
-                          JSON.parse(localStorage.getItem("currentuser"))[0]
+                        to={`/setting/${JSON.parse(localStorage.getItem("currentuser"))[0]
                             .resturant_ID
-                        }`}
+                          }`}
                         className="nav-link align-middle sidebartag"
                       >
                         <i className="fa-solid fa-gear"></i>
@@ -410,7 +410,7 @@ function Report() {
                       }}
                     >
                       <option>-- Select an option --</option>
-                      {orderReport1.length > 0 && orderReport1.map((report)=>{
+                      {orderReport1.length > 0 && orderReport1.map((report) => {
                         return <>
                           <option key={report.ID} value={report.ID}>{report.name}</option>
                         </>
@@ -445,9 +445,9 @@ function Report() {
                           aria-label="Username"
                         /> */}
                         <RangePicker
-                        format="DD-MM-YYYY"
-                        onChange={filterByDate}
-                      />
+                          format="DD-MM-YYYY"
+                          onChange={filterByDate}
+                        />
                       </div>
                       {/* <div className="col-2 text-center mt-2">
                         <span>To</span>
@@ -537,33 +537,33 @@ function Report() {
 
                 <div className="row">
                   <div className="table-responsive">
-                  <table className="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">
-                        #
-                      </th>
-                      <th scope="col">Customer Name</th>
-                      <th scope="col">Creation Date</th>
-                      <th scope="col">Method</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">PLATFORM FEE</th>
-                      <th scope="col">PROCESSOR FEE</th>
-                      <th scope="col">NET</th>
-                      <th scope="col">Total</th>
-                    </tr>
-                  </thead>
+                    <table className="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            #
+                          </th>
+                          <th scope="col">Customer Name</th>
+                          <th scope="col">Creation Date</th>
+                          <th scope="col">Method</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">PLATFORM FEE</th>
+                          <th scope="col">PROCESSOR FEE</th>
+                          <th scope="col">NET</th>
+                          <th scope="col">Total</th>
+                        </tr>
+                      </thead>
 
-                  {orderReport.map((report) => {
-                    return (
-                      <tbody>
-                        <tr key={report.cart_Id}>
-                          <th scope="row">{report.cart_Id}</th>
-                          <td>{report.cname}</td>
-                          <td>{moment(report.datetime).format('MMMM Do YYYY, h:mm a')}</td>
-                          <td>stripe</td>
-                          <td>
-                          {report.Orderstatus === "1" ? (
+                      {orderReport.map((report) => {
+                        return (
+                          <tbody>
+                            <tr key={report.cart_Id}>
+                              <th scope="row">{report.cart_Id}</th>
+                              <td>{report.cname}</td>
+                              <td>{moment(report.datetime).format('MMMM Do YYYY, h:mm a')}</td>
+                              <td>stripe</td>
+                              <td>
+                                {report.Orderstatus === "1" ? (
                                   <>Pending</>
                                 ) : report.Orderstatus === "2" ? (
                                   <>In Process</>
@@ -572,19 +572,19 @@ function Report() {
                                 ) : (
                                   <>Rejected</>
                                 )}
-                          </td>
-                          <td>£ 0.25</td>
-                          <td>£ 9</td>
-                          <td>£{report.total}</td>
-                          <td>£{report.total}</td>
-                        </tr>
-                      </tbody>
-                    );
-                  })}
-                </table>
+                              </td>
+                              <td>£ 0.25</td>
+                              <td>£ 9</td>
+                              <td>£{report.total}</td>
+                              <td>£{report.total}</td>
+                            </tr>
+                          </tbody>
+                        );
+                      })}
+                    </table>
                   </div>
                 </div>
-                
+
 
                 <div className="row">
                   <div className="col d-flex justify-content-end mt-4 mb-4">
@@ -617,30 +617,30 @@ function Report() {
                         </li>
                       </ul>
                     </nav> */}
-                                                    <ReactPaginate
-                breakLabel="..."
-                nextLabel="Next >"
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={5}
-                pageCount={pageCount}
-                previousLabel="< Previous"
-                renderOnZeroPageCount={null}
-         
-                marginPagesDisplayed={2}
-          
-                pageClassName="page-item"
-                pageLinkClassName="page-link"
-                previousClassName="page-item"
-                previousLinkClassName="page-link"
-                nextClassName="page-item"
-                nextLinkClassName="page-link"
-             
-                breakClassName="page-item"
-                breakLinkClassName="page-link"
-                containerClassName="pagination"
-                activeClassName="active"
-             
-              />
+                    <ReactPaginate
+                      breakLabel="..."
+                      nextLabel="Next >"
+                      onPageChange={handlePageClick}
+                      pageRangeDisplayed={5}
+                      pageCount={pageCount}
+                      previousLabel="< Previous"
+                      renderOnZeroPageCount={null}
+
+                      marginPagesDisplayed={2}
+
+                      pageClassName="page-item"
+                      pageLinkClassName="page-link"
+                      previousClassName="page-item"
+                      previousLinkClassName="page-link"
+                      nextClassName="page-item"
+                      nextLinkClassName="page-link"
+
+                      breakClassName="page-item"
+                      breakLinkClassName="page-link"
+                      containerClassName="pagination"
+                      activeClassName="active"
+
+                    />
                   </div>
                 </div>
               </div>
