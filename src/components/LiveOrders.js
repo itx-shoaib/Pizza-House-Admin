@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Howl, Howler } from "howler";
+import { Howl } from "howler";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./LiveOrders.css";
@@ -16,16 +16,16 @@ function LiveOrders() {
 
   useEffect(() => {
     async function fetchData() {
-      const detail={
-        id:JSON.parse(localStorage.getItem("currentuser"))[0].resturant_ID
+      const detail = {
+        id: JSON.parse(localStorage.getItem("currentuser"))[0].resturant_ID
       }
       try {
         const data = await (
-          await axios.post("http://localhost:5000/api/admin/getliveorders",detail)
+          await axios.post("http://localhost:5000/api/admin/getliveorders", detail)
         ).data;
 
         const count = await (
-          await axios.post("http://localhost:5000/api/admin/getliveorderscount",detail)
+          await axios.post("http://localhost:5000/api/admin/getliveorderscount", detail)
         ).data;
         setInfo(data.data);
 
@@ -49,7 +49,6 @@ function LiveOrders() {
       ).data;
       setInfo(data.data);
 
-      console.log(data.data);
     } catch (error) {
       console.log(error);
     }
@@ -61,14 +60,12 @@ function LiveOrders() {
       status: status,
     };
 
-    console.log(user);
 
     try {
       const result = await axios.post(
         "http://localhost:5000/api/admin/acceptorder",
         user
       ).data;
-      console.log(result);
       update();
     } catch (error) {
       console.log(error);
@@ -80,14 +77,13 @@ function LiveOrders() {
       cart_Id: id,
     };
 
-    console.log(user);
 
     try {
       const result = await axios.post(
         "http://localhost:5000/api/admin/rejectorder",
         user
       ).data;
-      console.log(result);
+
       update();
     } catch (error) {
       console.log(error);
@@ -102,7 +98,7 @@ function LiveOrders() {
             <div className="d-flex flex-column align-items-center px-3 pt-2 min-vh-100">
               <h5 className="my-5 text-center">
                 {getstatus === "true" &&
-                JSON.parse(localStorage.getItem("currentuser"))[0].role ===
+                  JSON.parse(localStorage.getItem("currentuser"))[0].role ===
                   1 ? (
                   <>{JSON.parse(localStorage.getItem("currentuser"))[0].name}</>
                 ) : JSON.parse(localStorage.getItem("currentuser"))[0].role ===
@@ -117,7 +113,7 @@ function LiveOrders() {
                 id="menu"
               >
                 {getstatus === "true" &&
-                JSON.parse(localStorage.getItem("currentuser"))[0].role ===
+                  JSON.parse(localStorage.getItem("currentuser"))[0].role ===
                   1 ? (
                   <>
                     <li className="nav-item">
@@ -596,6 +592,7 @@ function LiveOrders() {
                                               src="https://upload.wikimedia.org/wikipedia/commons/4/41/Red_circle.gif?20210202002436"
                                               width={28}
                                               height={28}
+                                              alt=".."
                                             />
                                           </div>
                                           <div className="col-md-3">
@@ -892,6 +889,7 @@ function LiveOrders() {
                                                   src="https://upload.wikimedia.org/wikipedia/commons/4/41/Red_circle.gif?20210202002436"
                                                   width={28}
                                                   height={28}
+                                                  alt=".."
                                                 />
                                               </div>
                                               <div className="col-md-3">
@@ -1011,6 +1009,7 @@ function LiveOrders() {
                                                   src="https://upload.wikimedia.org/wikipedia/commons/4/41/Red_circle.gif?20210202002436"
                                                   width={28}
                                                   height={28}
+                                                  alt=".."
                                                 />
                                               </div>
                                               <div className="row">
