@@ -34,28 +34,28 @@ function Dashboard() {
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
 
-  const handlePageClick = (event) => {
-    const newOffset = (event.selected * 6) % duplicateresturant.length;
-    console.log(`event selected ${event.selected * 6}`)
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
-    setItemOffset(newOffset);
-  };
-  useEffect(() => {
-    // Fetch orderHistory from another resources.
-    const endOffset = itemOffset + 6;
-    console.log(`Loading orderHistory from ${itemOffset} to ${endOffset}`);
-    setresturantData(duplicateresturant.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(duplicateresturant.length / 6));
-  }, [itemOffset,resturantData]);
+  // const handlePageClick = (event) => {
+  //   const newOffset = (event.selected * 6) % duplicateresturant.length;
+  //   console.log(`event selected ${event.selected * 6}`)
+  //   console.log(
+  //     `User requested page number ${event.selected}, which is offset ${newOffset}`
+  //   );
+  //   setItemOffset(newOffset);
+  // };
+  // useEffect(() => {
+  //   // Fetch orderHistory from another resources.
+  //   const endOffset = itemOffset + 6;
+  //   console.log(`Loading orderHistory from ${itemOffset} to ${endOffset}`);
+  //   setresturantData(duplicateresturant.slice(itemOffset, endOffset));
+  //   setPageCount(Math.ceil(duplicateresturant.length / 6));
+  // }, [itemOffset, resturantData]);
 
-  const { isLoaded } = useJsApiLoader({
-    id:'AIzaSyBPFym4hcICGvPCiwaShNyjf7653DV_e-0',
-    googleMapsApiKey:"AIzaSyBPFym4hcICGvPCiwaShNyjf7653DV_e-0"
-  })
+  // const { isLoaded } = useJsApiLoader({
+  //   id: 'AIzaSyBPFym4hcICGvPCiwaShNyjf7653DV_e-0',
+  //   googleMapsApiKey: "AIzaSyBPFym4hcICGvPCiwaShNyjf7653DV_e-0"
+  // })
 
-  async function location(e){
+  async function location(e) {
     alert(e)
   }
 
@@ -91,9 +91,9 @@ function Dashboard() {
 
   useEffect(() => {
     async function fetchData() {
-      
+
       const id = {
-        id:JSON.parse(localStorage.getItem("currentuser"))[0].resturant_ID
+        id: JSON.parse(localStorage.getItem("currentuser"))[0].resturant_ID
       }
       try {
         const data = await (
@@ -117,17 +117,17 @@ function Dashboard() {
         ).data;
 
         const salesvloumeresturant1 = await (
-          await axios.post("http://localhost:5000/api/admin/salesvloumeresturant",id)
+          await axios.post("http://localhost:5000/api/admin/salesvloumeresturant", id)
         ).data;
 
-        
+
         setresturantData(data.data);
         setduplicateresturant(data.data);
         setresturantcount(result.data);
         setsales(salevalume.data);
         setsalesvloumeresturant(salesvloumeresturant1.data);
         setmap(detail.data)
-        console.log(map.map((type)=>`https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=${type.latitude},${type.longitude}&h1=es;&output=embed`))
+        console.log(map.map((type) => `https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=${type.latitude},${type.longitude}&h1=es;&output=embed`))
       } catch (error) {
         console.log(error, "err");
       }
@@ -190,7 +190,7 @@ function Dashboard() {
             details
           )
         ).data;
-        
+
         setopeninfo(data.data[0]['online']);
       } catch (error) {
         console.log(error, "err");
@@ -251,7 +251,7 @@ function Dashboard() {
             <div className="d-flex flex-column align-items-center px-3 pt-2 min-vh-100">
               <h5 className="my-5 text-center">
                 {getstatus === "true" &&
-                JSON.parse(localStorage.getItem("currentuser"))[0].role ===
+                  JSON.parse(localStorage.getItem("currentuser"))[0].role ===
                   1 ? (
                   <>{JSON.parse(localStorage.getItem("currentuser"))[0].name}</>
                 ) : JSON.parse(localStorage.getItem("currentuser"))[0].role ===
@@ -266,7 +266,7 @@ function Dashboard() {
                 id="menu"
               >
                 {getstatus === "true" &&
-                JSON.parse(localStorage.getItem("currentuser"))[0].role ===
+                  JSON.parse(localStorage.getItem("currentuser"))[0].role ===
                   1 ? (
                   <>
                     <li className="nav-item">
@@ -323,10 +323,9 @@ function Dashboard() {
                     </li>
                     <li className="nav-item">
                       <Link
-                        to={`/setting/${
-                          JSON.parse(localStorage.getItem("currentuser"))[0]
-                            .resturant_ID
-                        }`}
+                        to={`/setting/${JSON.parse(localStorage.getItem("currentuser"))[0]
+                          .resturant_ID
+                          }`}
                         className="nav-link align-middle sidebartag"
                       >
                         <i className="fa-solid fa-gear"></i>
@@ -499,7 +498,7 @@ function Dashboard() {
 
                 {getstatus === "true" &&
                   JSON.parse(localStorage.getItem("currentuser"))[0].role ===
-                    1 && (
+                  1 && (
                     <>
                       <div className="openh1 my-5 mx-3 px-5 py-4 responsiveness">
                         {openinfo === "true" ? (
@@ -741,7 +740,7 @@ function Dashboard() {
             </div>
 
             {getstatus === "true" &&
-            JSON.parse(localStorage.getItem("currentuser"))[0].role === 1 ? (
+              JSON.parse(localStorage.getItem("currentuser"))[0].role === 1 ? (
               <>
                 {/* start of 1st resturant analytics  */}
                 <div className="row justify-content-center cardsrow responsiveness">
@@ -971,7 +970,7 @@ function Dashboard() {
                         </p>
                       </div>
                       <div className="col-6 d-flex justify-content-end">
-                      <ReactPaginate
+                        {/* <ReactPaginate
                 breakLabel="..."
                 nextLabel="Next >"
                 onPageChange={handlePageClick}
@@ -994,7 +993,7 @@ function Dashboard() {
                 containerClassName="pagination"
                 activeClassName="active"
              
-              />
+              /> */}
                       </div>
                     </div>
                   </div>
@@ -1029,8 +1028,8 @@ function Dashboard() {
                             onClick={location}
                             src={`https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=${map[0].latitude},${map[0].longitude}&h1=es;&output=embed`}
                           /> */}
-               <Map isLoaded={isLoaded} />
-                                        {/* <a href="https://mcpenation.com/">Resturants</a> */}
+                          {/* <Map isLoaded={isLoaded} /> */}
+                          {/* <a href="https://mcpenation.com/">Resturants</a> */}
                         </div>
                       </div>
                     </div>
