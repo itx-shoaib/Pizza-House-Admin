@@ -64,7 +64,8 @@ function SigninPage() {
             <Link to="/">
               <img
                 className="menuimg"
-                src="https://www.happyspizzaburger.co.uk/uploads/restorants/198031cc-1875-4d54-8945-8135a96f353a_large.jpg"
+                src={require("../Images/logo.png")}
+                alt=".."
               />
             </Link>
             <h5 className="fw-bolder my-4 spaceWelcome">WELCOME BACK</h5>
@@ -109,7 +110,7 @@ function SigninPage() {
                   </label>
                 </div>
               </div>
-              <div style={{marginTop: '-15px'}} className='container'>
+              <div style={{ marginTop: '-15px' }} className='container'>
                 <div className="mb-5 row">
                   <div className='col-12'>
                     <button
