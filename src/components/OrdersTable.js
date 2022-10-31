@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import { DatePicker, Space } from "antd";
 import "antd/dist/antd.css";
 import moment from "moment";
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import ReactPaginate from 'react-paginate';
+
 const { RangePicker } = DatePicker;
 
 function OrdersTable() {
@@ -31,7 +30,7 @@ function OrdersTable() {
   async function searchByName() {
     // alert("you have searched")
   }
-  console.log(duplicateorderHistory.length)
+  // console.log(duplicateorderHistory.length)
 
 
 
