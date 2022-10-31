@@ -34,43 +34,7 @@ function OrdersTable() {
   console.log(duplicateorderHistory.length)
 
 
-  // for orderHistory pagination
-  const handlePageClick = (event) => {
-    const newOffset = (event.selected * 6) % duplicateorderHistory.length;
-    console.log(`event selected ${event.selected * 6}`)
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
-    setItemOffset(newOffset);
-  };
-  useEffect(() => {
-    // Fetch orderHistory from another resources.
-    const endOffset = itemOffset + 6;
-    console.log(`Loading orderHistory from ${itemOffset} to ${endOffset}`);
-    setorderHistory(duplicateorderHistory.slice(itemOffset, endOffset));
-    console.log(10, orderHistory);
-    setPageCount(Math.ceil(duplicateorderHistory.length / 6));
-    console.log(10, orderHistory.length / 6);
-  }, [itemOffset, orders]);
 
-  // For order pagination
-  const handlePageClick1 = (event) => {
-    const newOffset = (event.selected * 6) % duplicateorders.length;
-    console.log(`event selected ${event.selected * 6}`)
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
-    setItemOffset(newOffset);
-  };
-  useEffect(() => {
-    // Fetch orderHistory from another resources.
-    const endOffset = itemOffset + 6;
-    console.log(`Loading orderHistory from ${itemOffset} to ${endOffset}`);
-    setOrders(duplicateorders.slice(itemOffset, endOffset));
-    console.log(10, orderHistory);
-    setPageCount(Math.ceil(duplicateorders.length / 6));
-    console.log(10, orderHistory.length / 6);
-  }, [itemOffset, orders]);
   function filterByDate(dates) {
 
     if (dates) {
@@ -100,10 +64,7 @@ function OrdersTable() {
 
       }
     } else {
-      console.log(dates)
-      const endOffset = itemOffset + 6;
-      console.log(`Loading orderHistory from ${itemOffset} to ${endOffset}`);
-      setorderHistory(duplicateorderHistory.slice(itemOffset, endOffset));
+
     }
     // alert(fromdate)
 
@@ -131,24 +92,30 @@ function OrdersTable() {
   function filterByDate2(dates) {
     setfromdate(moment(dates[0]).format("DD-MM-YYYY"));
     settodate(moment(dates[1]).format("DD-MM-YYYY"));
+    if (dates) {
+      if (dates[0] && dates[1]) {
+        const temporders = duplicateorders.filter(
+          (order) => {
+            console.log(Date.parse(dates[0]._d)
+              , Date.parse(order.DateTime), Date.parse(dates[1]._d)
+            )
+            return Date.parse(dates[0]._d) < Date.parse(order.DateTime) && Date.parse(dates[1]._d) > Date.parse(order.DateTime)
+          }
+        );
+        setOrders(temporders);
 
-    if (dates[0] && dates[1]) {
-      const temporders = duplicateorders.filter(
-        (order) => {
-          console.log(Date.parse(dates[0]._d)
-            , Date.parse(order.DateTime), Date.parse(dates[1]._d)
-          )
-          return Date.parse(dates[0]._d) < Date.parse(order.DateTime) && Date.parse(dates[1]._d) > Date.parse(order.DateTime)
-        }
-      );
-      setOrders(temporders);
 
-
-      // setOrders(temporders);
+        // setOrders(temporders);
+      }
+      else {
+        setOrders(orders)
+      }
     }
     else {
       setOrders(orders)
     }
+
+
 
     // alert(fromdate)
 
@@ -468,7 +435,7 @@ function OrdersTable() {
                   <div className="col-md-4"></div>
                   <div className="col-md-4"></div>
                   <div className="col-md-4">
-                    <ReactPaginate
+                    {/* <ReactPaginate
                       breakLabel="..."
                       nextLabel="Next >"
                       onPageChange={handlePageClick1}
@@ -491,7 +458,7 @@ function OrdersTable() {
                       containerClassName="pagination"
                       activeClassName="active"
 
-                    />
+                    /> */}
                   </div>
                 </div>
               </table>
@@ -599,7 +566,7 @@ function OrdersTable() {
                 </table>
               </div>
               <hr />
-              <ReactPaginate
+              {/* <ReactPaginate
                 breakLabel="..."
                 nextLabel="Next >"
                 onPageChange={handlePageClick}
@@ -622,7 +589,7 @@ function OrdersTable() {
                 containerClassName="pagination"
                 activeClassName="active"
 
-              />
+              /> */}
 
 
               {/* <div className="d-flex justify-content-end mt-4 me-5 pb-4">
