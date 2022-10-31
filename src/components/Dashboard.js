@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Dashboard.css";
 import Navbar from "./Navbar";
-import ReactPaginate from 'react-paginate';
-import { type } from "@testing-library/user-event/dist/type";
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-
-import Map from "./Map";
 
 function Dashboard() {
   const [resturantData, setresturantData] = useState([]);
@@ -28,11 +23,11 @@ function Dashboard() {
   const [salesvloumeresturant, setsalesvloumeresturant] = useState([])
   const [map, setmap] = useState([])
   const refCloseadd = useRef(null);
-  const [currentItems, setCurrentItems] = useState(null);
-  const [pageCount, setPageCount] = useState(0);
+  // const [currentItems, setCurrentItems] = useState(null);
+  // const [pageCount, setPageCount] = useState(0);
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
-  const [itemOffset, setItemOffset] = useState(0);
+  // const [itemOffset, setItemOffset] = useState(0);
 
   // const handlePageClick = (event) => {
   //   const newOffset = (event.selected * 6) % duplicateresturant.length;
@@ -55,9 +50,7 @@ function Dashboard() {
   //   googleMapsApiKey: "AIzaSyBPFym4hcICGvPCiwaShNyjf7653DV_e-0"
   // })
 
-  async function location(e) {
-    alert(e)
-  }
+
 
   async function open() {
     const details = {
@@ -127,7 +120,7 @@ function Dashboard() {
         setsales(salevalume.data);
         setsalesvloumeresturant(salesvloumeresturant1.data);
         setmap(detail.data)
-        console.log(map.map((type) => `https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=${type.latitude},${type.longitude}&h1=es;&output=embed`))
+        // console.log(map.map((type) => `https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=${type.latitude},${type.longitude}&h1=es;&output=embed`))
       } catch (error) {
         console.log(error, "err");
       }
@@ -197,7 +190,7 @@ function Dashboard() {
       }
     }
     fetchData();
-  }, []);
+  });
 
   async function update4() {
     const details = {
@@ -230,13 +223,13 @@ function Dashboard() {
   let roundoff = total.toFixed(3);
 
 
-  let total1 = 0;
+  // let total1 = 0;
   // for (const product of order) {
   //     const productTotal = product.price;
   //     total = total + productTotal;
   // }
-  for (var i = 0; i < salesvloumeresturant.length; i++) {
-    let productTotal = salesvloumeresturant[i].total;
+  for (var x = 0; x < salesvloumeresturant.length; i++) {
+    let productTotal = salesvloumeresturant[x].total;
     total = total + parseFloat(productTotal);
   }
 
