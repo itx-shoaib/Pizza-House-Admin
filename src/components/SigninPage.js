@@ -120,14 +120,14 @@ function SigninPage() {
                       SIGN IN
                     </button>
                   </div>
-                  <div className='col-12 mt-4'>
+                  {/* <div className='col-12 mt-4'>
                     <button className="btn btn-light signinbtn btnGoogle">
                       <i className="fa-brands fa-google text-danger fs-4"></i> GOOGLE
                     </button>
                   </div>
                   <div className='col-12 mt-4'><button className="btn btn-light signinbtn btnFb">
                     <i className="fa-brands fa-square-facebook text-primary fs-4"></i> FACEBOOK
-                  </button></div>
+                  </button></div> */}
 
                 </div>
               </div>
