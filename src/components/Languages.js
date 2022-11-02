@@ -13,7 +13,7 @@ function Languages() {
         }
         const data = await (
           await axios.post(
-            "http://localhost:5000/api/superadmin/getlanguage",
+            "https://res.creativeparkingsolutions.com/api/superadmin/getlanguage",
             details
           )
         ).data;

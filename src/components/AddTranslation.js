@@ -21,7 +21,7 @@ function AddTranslation() {
     try {
       const result = await (
         await axios.post(
-          "http://localhost:5000/api/superadmin/addtranslation",
+          "https://res.creativeparkingsolutions.com/api/superadmin/addtranslation",
           details
         )
       ).data;

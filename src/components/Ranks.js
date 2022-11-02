@@ -15,7 +15,7 @@ function Ranks() {
         }
         const data = await (
           await axios.post(
-            "http://localhost:5000/api/superadmin/getranks",
+            "https://res.creativeparkingsolutions.com/api/superadmin/getranks",
             details
           )
         ).data;

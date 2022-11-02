@@ -14,7 +14,7 @@ function ForgotPassword() {
     try {
       const result = await (
         await axios.post(
-          "http://localhost:5000/api/superadmin/forgetpassword",
+          "https://res.creativeparkingsolutions.com/api/superadmin/forgetpassword",
           details
         )
       ).data

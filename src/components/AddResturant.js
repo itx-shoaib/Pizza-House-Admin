@@ -90,7 +90,7 @@ function AddResturant() {
     try {
 
       // setloading(true)
-      const result = await axios.post("http://localhost:5000/api/setting/addresturant",details).data;
+      const result = await axios.post("https://res.creativeparkingsolutions.com/api/setting/addresturant",details).data;
       console.log(result)
       // toast.success("Registration Successfull")
       // setloading(true)

@@ -19,7 +19,7 @@ function MyProfile() {
     try {
 
       // setloading(true)
-      const result = await axios.post("http://localhost:5000/api/admin/myprofile",details).data;
+      const result = await axios.post("https://res.creativeparkingsolutions.com/api/admin/myprofile",details).data;
       console.log(result)
       // toast.success("Password has been changed")
       // setloading(true)

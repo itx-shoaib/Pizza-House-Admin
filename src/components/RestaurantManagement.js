@@ -70,7 +70,7 @@ function RestaurantManagement() {
 
     try {
       const result = await axios.post(
-        "http://localhost:5000/api/setting/resturantmanagement",
+        "https://res.creativeparkingsolutions.com/api/setting/resturantmanagement",
         formData, config
       ).data;
       console.log(result);
@@ -97,7 +97,7 @@ function RestaurantManagement() {
   async function update(){
     try {
       const data = await (
-        await axios.get(`http://localhost:5000/api/superadmin/geteditresturant/${id}`)
+        await axios.get(`https://res.creativeparkingsolutions.com/api/superadmin/geteditresturant/${id}`)
       ).data;
       setupdatename(data.data['name']);
       setupdateowner_name(data.data['owner_name']);
@@ -128,7 +128,7 @@ function RestaurantManagement() {
       async function fetchData() {
         try {
           const data = await (
-            await axios.get(`http://localhost:5000/api/superadmin/geteditresturant/${cid}`)
+            await axios.get(`https://res.creativeparkingsolutions.com/api/superadmin/geteditresturant/${cid}`)
           ).data;
           update();
           setupdatename(data.data['name']);
@@ -153,7 +153,7 @@ function RestaurantManagement() {
       async function fetchData() {
         try {
           const data = await (
-            await axios.get(`http://localhost:5000/api/superadmin/geteditresturant/${id}`)
+            await axios.get(`https://res.creativeparkingsolutions.com/api/superadmin/geteditresturant/${id}`)
           ).data;
           update();
           setupdatename(data.data['name']);

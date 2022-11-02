@@ -17,7 +17,7 @@ function AddLanguage() {
     try {
       const result = await (
         await axios.post(
-          "http://localhost:5000/api/superadmin/addlanguage",
+          "https://res.creativeparkingsolutions.com/api/superadmin/addlanguage",
           details
         )
       ).data

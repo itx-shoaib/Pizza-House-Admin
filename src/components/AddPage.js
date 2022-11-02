@@ -40,7 +40,7 @@ function AddPage() {
     try {
 
       // setloading(true)
-      const result = await axios.post("http://localhost:5000/api/superadmin/addpage",details).data;
+      const result = await axios.post("https://res.creativeparkingsolutions.com/api/superadmin/addpage",details).data;
       console.log(result)
       // toast.success("Registration Successfull")
       // setloading(true)
@@ -69,7 +69,7 @@ function AddPage() {
     alert(updatedescription)
 
     // try {
-    //   const result = await axios.post("http://localhost:5000/api/superadmin/editpage",details).data; 
+    //   const result = await axios.post("https://res.creativeparkingsolutions.com/api/superadmin/editpage",details).data; 
     // } catch (error) {
     //   console.log(error)
     // }
@@ -79,7 +79,7 @@ function AddPage() {
     async function fetchData() {
       try {
         const data = await (
-          await axios.get(`http://localhost:5000/api/superadmin/editpageitem/${ID}`)
+          await axios.get(`https://res.creativeparkingsolutions.com/api/superadmin/editpageitem/${ID}`)
         ).data;
         setupdatetitle(data.data['title']);
         setupdatedescription(data.data['description']);

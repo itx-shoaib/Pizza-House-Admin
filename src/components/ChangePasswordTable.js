@@ -19,7 +19,7 @@ function ChangePasswordTable() {
       try {
 
         // setloading(true)
-        const result = await axios.post("http://localhost:5000/api/admin/changepassword", details).data;
+        const result = await axios.post("https://res.creativeparkingsolutions.com/api/admin/changepassword", details).data;
         toast.success("Password has been changed")
         // setloading(true)
         setInterval(() => {

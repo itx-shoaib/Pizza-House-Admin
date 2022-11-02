@@ -44,7 +44,7 @@ function ResturantsTable() {
     try {
       const data = (
         await axios.post(
-          "http://localhost:5000/api/superadmin/deleteresturant",
+          "https://res.creativeparkingsolutions.com/api/superadmin/deleteresturant",
           info
         )
       ).data;
@@ -62,7 +62,7 @@ function ResturantsTable() {
     try {
       const data = (
         await axios.post(
-          "http://localhost:5000/api/superadmin/deactivateresturant",
+          "https://res.creativeparkingsolutions.com/api/superadmin/deactivateresturant",
           info
         )
       ).data;
@@ -79,7 +79,7 @@ function ResturantsTable() {
     try {
       const data = (
         await axios.post(
-          "http://localhost:5000/api/superadmin/activateresturant",
+          "https://res.creativeparkingsolutions.com/api/superadmin/activateresturant",
           info
         )
       ).data;
@@ -92,7 +92,7 @@ function ResturantsTable() {
   async function update() {
     try {
       const data = await (
-        await axios.get("http://localhost:5000/api/superadmin/getallresturants")
+        await axios.get("https://res.creativeparkingsolutions.com/api/superadmin/getallresturants")
       ).data;
       setresturants(data.data);
     } catch (error) {
@@ -107,7 +107,7 @@ function ResturantsTable() {
     }
     try {
       const data = await (
-        await axios.post("http://localhost:5000/api/superadmin/loginas",detail)
+        await axios.post("https://res.creativeparkingsolutions.com/api/superadmin/loginas",detail)
       ).data;
       
       if(data.loginas === "false"){
@@ -135,7 +135,7 @@ function ResturantsTable() {
       try {
         const data = await (
           await axios.get(
-            "http://localhost:5000/api/superadmin/getallresturants"
+            "https://res.creativeparkingsolutions.com/api/superadmin/getallresturants"
           )
         ).data;
         setresturants(data.data);

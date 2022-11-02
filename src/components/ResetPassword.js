@@ -19,7 +19,7 @@ function ResetPassword() {
         try {
 
             // setloading(true)
-            const result = await axios.post(`http://localhost:5000/api/superadmin/resetpassword/${email}`,user).data;
+            const result = await axios.post(`https://res.creativeparkingsolutions.com/api/superadmin/resetpassword/${email}`,user).data;
             console.log(result)
             toast.success("Password change Successfull")
             // setloading(true)

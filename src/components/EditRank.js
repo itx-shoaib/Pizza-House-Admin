@@ -23,7 +23,7 @@ function EditRank() {
     try {
       const result = await (
         await axios.post(
-          "http://localhost:5000/api/superadmin/editrank",
+          "https://res.creativeparkingsolutions.com/api/superadmin/editrank",
           details
         )
       ).data
@@ -43,7 +43,7 @@ function EditRank() {
       try {
         const data = await (
           await axios.get(
-            `http://localhost:5000/api/superadmin/geteditrank/${id}`
+            `https://res.creativeparkingsolutions.com/api/superadmin/geteditrank/${id}`
           )
         ).data;
 

@@ -21,7 +21,7 @@ function AddRank() {
     try {
       const result = await (
         await axios.post(
-          "http://localhost:5000/api/superadmin/addrank",
+          "https://res.creativeparkingsolutions.com/api/superadmin/addrank",
           details
         )
       ).data

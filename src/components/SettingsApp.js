@@ -33,7 +33,7 @@ function SettingsApp() {
       }
       try {
 
-        const result = await axios.post("http://localhost:5000/api/setting/apps",details).data;
+        const result = await axios.post("https://res.creativeparkingsolutions.com/api/setting/apps",details).data;
         console.log(result)
         toast.success("Data has been saved")
   
@@ -70,7 +70,7 @@ function SettingsApp() {
       }
       try {
 
-        const result = await axios.post("http://localhost:5000/api/setting/apps",details).data;
+        const result = await axios.post("https://res.creativeparkingsolutions.com/api/setting/apps",details).data;
         console.log(result)
         toast.success("Data has been saved")
   

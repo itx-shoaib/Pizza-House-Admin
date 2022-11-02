@@ -13,7 +13,7 @@ function CustomersTable() {
     }
 
     try {
-      const data = (await axios.post('http://localhost:5000/api/user/deletecustomer', info)).data
+      const data = (await axios.post('https://res.creativeparkingsolutions.com/api/user/deletecustomer', info)).data
       update()
       toast.success("Customer has been deleted");
       // window.location.reload();
@@ -29,7 +29,7 @@ function CustomersTable() {
 
   async function update(){
       try {
-        const data = await (await axios.get('http://localhost:5000/api/admin/getcustomers')).data
+        const data = await (await axios.get('https://res.creativeparkingsolutions.com/api/admin/getcustomers')).data
         setCustomers(data.data)
 
       } catch (error) {
@@ -40,7 +40,7 @@ function CustomersTable() {
     async function fetchData() {
 
       try {
-        const data = await (await axios.get('http://localhost:5000/api/admin/getcustomers')).data
+        const data = await (await axios.get('https://res.creativeparkingsolutions.com/api/admin/getcustomers')).data
         setCustomers(data.data)
 
       } catch (error) {

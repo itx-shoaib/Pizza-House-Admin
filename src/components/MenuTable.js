@@ -38,7 +38,7 @@ function MenuTable() {
 
     try {
       const result = await axios.post(
-        " http://localhost:5000/api/admin/createmenu",
+        " https://res.creativeparkingsolutions.com/api/admin/createmenu",
         user
       ).data;
       console.log(result);
@@ -54,7 +54,7 @@ function MenuTable() {
   async function update() {
     try {
       const data = await (
-        await axios.get("http://localhost:5000/api/admin/getallmenu")
+        await axios.get("https://res.creativeparkingsolutions.com/api/admin/getallmenu")
       ).data;
       setcategory(data.data);
       console.log(category);
@@ -70,7 +70,7 @@ function MenuTable() {
 
     try {
       const result = await axios.post(
-        " http://localhost:5000/api/admin/deletemenu",
+        " https://res.creativeparkingsolutions.com/api/admin/deletemenu",
         user
       ).data;
       console.log(result);
@@ -100,7 +100,7 @@ function MenuTable() {
 
     try {
       const result = await axios.post(
-        " http://localhost:5000/api/admin/updatemenu ",
+        " https://res.creativeparkingsolutions.com/api/admin/updatemenu ",
         user
       ).data;
       console.log(result);
@@ -117,7 +117,7 @@ function MenuTable() {
   async function update1() {
     try {
       const data = await (
-        await axios.get("http://localhost:5000/api/admin/getallitems")
+        await axios.get("https://res.creativeparkingsolutions.com/api/admin/getallitems")
       ).data;
       setItem(data.data);
       console.log(item);
@@ -158,7 +158,7 @@ function MenuTable() {
 
     try {
       const result = await axios.post(
-        " http://localhost:5000/api/admin/createitem",
+        " https://res.creativeparkingsolutions.com/api/admin/createitem",
         formData, config
       ).data;
       console.log(result);
@@ -189,7 +189,7 @@ function MenuTable() {
 
   //   try {
   //     const result = await axios.post(
-  //       " http://localhost:5000/api/admin/imageuploadcheck",
+  //       " https://res.creativeparkingsolutions.com/api/admin/imageuploadcheck",
   //       formData,config
   //     ).data;
   //     console.log(result);
@@ -211,7 +211,7 @@ function MenuTable() {
     async function fetchData() {
       try {
         const data = await (
-          await axios.get("http://localhost:5000/api/admin/getallmenu")
+          await axios.get("https://res.creativeparkingsolutions.com/api/admin/getallmenu")
         ).data;
         setcategory(data.data);
         console.log(category);
@@ -231,7 +231,7 @@ function MenuTable() {
     async function fetchData() {
       try {
         const data = await (
-          await axios.get("http://localhost:5000/api/admin/getallitems")
+          await axios.get("https://res.creativeparkingsolutions.com/api/admin/getallitems")
         ).data;
         setItem(data.data);
         console.log(item);

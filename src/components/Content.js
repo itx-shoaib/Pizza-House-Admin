@@ -98,7 +98,7 @@ function Content() {
 
   try {
     const result = await axios.post(
-      " http://localhost:5000/api/setting/addcontent",
+      " https://res.creativeparkingsolutions.com/api/setting/addcontent",
      formData, config
     ).data;
     console.log(result);
@@ -119,7 +119,7 @@ function Content() {
       description
     }
     try {
-      const result = await axios.post("http://localhost:5000/api/setting/addtimings",detail).data;
+      const result = await axios.post("https://res.creativeparkingsolutions.com/api/setting/addtimings",detail).data;
       console.log(result.message)
       toast.success("Data has been inserted")
       setdescription("")
@@ -144,7 +144,7 @@ function Content() {
   }
 
     try {
-      const result = await axios.post("http://localhost:5000/api/setting/addgallery",formData, config).data;
+      const result = await axios.post("https://res.creativeparkingsolutions.com/api/setting/addgallery",formData, config).data;
       console.log(result.message)
       toast.success("Data has been inserted")
       setimage("")

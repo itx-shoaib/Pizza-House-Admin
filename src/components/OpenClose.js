@@ -26,7 +26,7 @@ function OpenClose() {
 
     try {
       const data = await (
-        await axios.post("http://localhost:5000/api/superadmin/openclose",details)
+        await axios.post("https://res.creativeparkingsolutions.com/api/superadmin/openclose",details)
       ).data;
       toast.success("Data has been saved")
 
