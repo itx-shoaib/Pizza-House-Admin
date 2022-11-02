@@ -423,7 +423,7 @@ function OrdersTable() {
                                 cod(unpaid)
                               </span>
                             </td>
-                            <td>${order.total}</td>
+                            <td>RS. {order.total}</td>
                           </tr>
                         </>
                       );

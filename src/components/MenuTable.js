@@ -435,7 +435,7 @@ function MenuTable() {
                                                   {items.Price !==
                                                     "undefined" ? (
                                                     <p>
-                                                      $ {items.Price}
+                                                      RS. {items.Price}
                                                       <br />
                                                       AVAILABLE
                                                     </p>

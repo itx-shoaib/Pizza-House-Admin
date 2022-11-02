@@ -49,7 +49,7 @@ function SettingsTable() {
                 <i className="fa-solid fa-mobile-screen btnicon"></i>
                 Apps
               </button>
-              <button
+              {/* <button
                 className="nav-link tabbutton"
                 id="delivery-area-tab"
                 data-bs-toggle="tab"
@@ -61,8 +61,8 @@ function SettingsTable() {
               >
                 <i className="fa-solid fa-location-dot btnicon"></i>
                 Delivery Area
-              </button>
-              <button
+              </button> */}
+              {/* <button
                 className="nav-link tabbutton"
                 id="working-hrs-tab"
                 data-bs-toggle="tab"
@@ -74,7 +74,7 @@ function SettingsTable() {
               >
                 <i className="fa-solid fa-clock btnicon"></i>
                 Working Hours
-              </button>
+              </button> */}
               <button
                 className="nav-link tabbutton"
                 id="open-close-tab"
@@ -88,7 +88,7 @@ function SettingsTable() {
                 <i className="fa-solid fa-house btnicon"></i>
                 Open/Close
               </button>
-              <button
+              {/* <button
                 className="nav-link tabbutton"
                 id="menu-type-tab"
                 data-bs-toggle="tab"
@@ -100,8 +100,8 @@ function SettingsTable() {
               >
                 <i className="fa-solid fa-bars btnicon"></i>
                 Menu Type
-              </button>
-              <button
+              </button> */}
+              {/* <button
                 className="nav-link tabbutton"
                 id="loyalty-scheme-tab"
                 data-bs-toggle="tab"
@@ -152,7 +152,7 @@ function SettingsTable() {
               >
                 <i className="fa-solid fa-heading btnicon"></i>
                 Content
-              </button>
+              </button> */}
             </div>
           </nav>
         </div>
@@ -166,7 +166,7 @@ function SettingsTable() {
               role="tabpanel"
               aria-labelledby="restaurant-management-tab"
             >
-              <RestaurantManagement/>
+              <RestaurantManagement />
             </div>
             <div
               className="tab-pane fade"
@@ -174,7 +174,7 @@ function SettingsTable() {
               role="tabpanel"
               aria-labelledby="apps-tab"
             >
-              <SettingsApp/>
+              <SettingsApp />
             </div>
             <div
               className="tab-pane fade"
@@ -182,7 +182,7 @@ function SettingsTable() {
               role="tabpanel"
               aria-labelledby="delivery-area-tab"
             >
-              <DeliveryArea/>
+              <DeliveryArea />
             </div>
             <div
               className="tab-pane fade"
@@ -190,7 +190,7 @@ function SettingsTable() {
               role="tabpanel"
               aria-labelledby="working-hrs-tab"
             >
-              <WorkingHours/>
+              <WorkingHours />
             </div>
             <div
               className="tab-pane fade"
@@ -198,7 +198,7 @@ function SettingsTable() {
               role="tabpanel"
               aria-labelledby="open-close-tab"
             >
-              <OpenClose/>
+              <OpenClose />
             </div>
             <div
               className="tab-pane fade"
@@ -206,7 +206,7 @@ function SettingsTable() {
               role="tabpanel"
               aria-labelledby="menu-type-tab"
             >
-              <MenuType/>
+              <MenuType />
             </div>
             <div
               className="tab-pane fade"
@@ -214,7 +214,7 @@ function SettingsTable() {
               role="tabpanel"
               aria-labelledby="loyalty-scheme-tab"
             >
-              <LoyaltyScheme/>
+              <LoyaltyScheme />
             </div>
             <div
               className="tab-pane fade"
@@ -222,7 +222,7 @@ function SettingsTable() {
               role="tabpanel"
               aria-labelledby="referral-scheme-tab"
             >
-              <ReferralScheme/>
+              <ReferralScheme />
             </div>
             <div
               className="tab-pane fade"
@@ -230,7 +230,7 @@ function SettingsTable() {
               role="tabpanel"
               aria-labelledby="config-tab"
             >
-              <Configuration/>
+              <Configuration />
             </div>
             <div
               className="tab-pane fade"
@@ -238,7 +238,7 @@ function SettingsTable() {
               role="tabpanel"
               aria-labelledby="content-tab"
             >
-              <Content/>
+              <Content />
             </div>
           </div>
         </div>

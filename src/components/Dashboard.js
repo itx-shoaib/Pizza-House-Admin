@@ -23,34 +23,6 @@ function Dashboard() {
   const [salesvloumeresturant, setsalesvloumeresturant] = useState([])
   const [map, setmap] = useState([])
   const refCloseadd = useRef(null);
-  // const [currentItems, setCurrentItems] = useState(null);
-  // const [pageCount, setPageCount] = useState(0);
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
-  // const [itemOffset, setItemOffset] = useState(0);
-
-  // const handlePageClick = (event) => {
-  //   const newOffset = (event.selected * 6) % duplicateresturant.length;
-  //   console.log(`event selected ${event.selected * 6}`)
-  //   console.log(
-  //     `User requested page number ${event.selected}, which is offset ${newOffset}`
-  //   );
-  //   setItemOffset(newOffset);
-  // };
-  // useEffect(() => {
-  //   // Fetch orderHistory from another resources.
-  //   const endOffset = itemOffset + 6;
-  //   console.log(`Loading orderHistory from ${itemOffset} to ${endOffset}`);
-  //   setresturantData(duplicateresturant.slice(itemOffset, endOffset));
-  //   setPageCount(Math.ceil(duplicateresturant.length / 6));
-  // }, [itemOffset, resturantData]);
-
-  // const { isLoaded } = useJsApiLoader({
-  //   id: 'AIzaSyBPFym4hcICGvPCiwaShNyjf7653DV_e-0',
-  //   googleMapsApiKey: "AIzaSyBPFym4hcICGvPCiwaShNyjf7653DV_e-0"
-  // })
-
-
 
   async function open() {
     const details = {
@@ -82,51 +54,50 @@ function Dashboard() {
     }
   }
 
-  useEffect(() => {
-    async function fetchData() {
+  // useEffect(() => {
+  //   async function fetchData() {
 
-      const id = {
-        id: JSON.parse(localStorage.getItem("currentuser"))[0].resturant_ID
-      }
-      try {
-        const data = await (
-          await axios.get(
-            "https://res.creativeparkingsolutions.com/api/superadmin/getliveresturants"
-          )
-        ).data;
+  //     const id = {
+  //       id: JSON.parse(localStorage.getItem("currentuser"))[0].resturant_ID
+  //     }
+  //     try {
+  //       const data = await (
+  //         await axios.get(
+  //           "https://res.creativeparkingsolutions.com/api/superadmin/getliveresturants"
+  //         )
+  //       ).data;
 
-        const result = await (
-          await axios.get("https://res.creativeparkingsolutions.com/api/superadmin/resturantcount")
-        ).data;
+  //       const result = await (
+  //         await axios.get("https://res.creativeparkingsolutions.com/api/superadmin/resturantcount")
+  //       ).data;
 
-        const detail = await (
-          await axios.get(
-            "https://res.creativeparkingsolutions.com/api/superadmin/getreattiemap"
-          )
-        ).data;
+  //       const detail = await (
+  //         await axios.get(
+  //           "https://res.creativeparkingsolutions.com/api/superadmin/getreattiemap"
+  //         )
+  //       ).data;
 
-        const salevalume = await (
-          await axios.get("https://res.creativeparkingsolutions.com/api/admin/salesvloume")
-        ).data;
+  //       const salevalume = await (
+  //         await axios.get("https://res.creativeparkingsolutions.com/api/admin/salesvloume")
+  //       ).data;
 
-        const salesvloumeresturant1 = await (
-          await axios.post("https://res.creativeparkingsolutions.com/api/admin/salesvloumeresturant", id)
-        ).data;
+  //       const salesvloumeresturant1 = await (
+  //         await axios.post("https://res.creativeparkingsolutions.com/api/admin/salesvloumeresturant", id)
+  //       ).data;
 
 
-        setresturantData(data.data);
-        setduplicateresturant(data.data);
-        setresturantcount(result.data);
-        setsales(salevalume.data);
-        setsalesvloumeresturant(salesvloumeresturant1.data);
-        setmap(detail.data)
-        // console.log(map.map((type) => `https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=${type.latitude},${type.longitude}&h1=es;&output=embed`))
-      } catch (error) {
-        console.log(error, "err");
-      }
-    }
-    fetchData();
-  }, []);
+  //       setresturantData(data.data);
+  //       setduplicateresturant(data.data);
+  //       setresturantcount(result.data);
+  //       setsales(salevalume.data);
+  //       setsalesvloumeresturant(salesvloumeresturant1.data);
+  //       setmap(detail.data)
+  //     } catch (error) {
+  //       console.log(error, "err");
+  //     }
+  //   }
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     async function fetchData() {
@@ -744,7 +715,7 @@ function Dashboard() {
                   >
                     <div className="col-md-2 dashboardcards responsiveness">
                       <h5 className="boldtext cardtitleclr">Sales Volume</h5>
-                      <h4 className="boldtext cardinfoclr">${roundoff}</h4>
+                      <h4 className="boldtext cardinfoclr">RS. {roundoff}</h4>
                       <h6>(days)</h6>
                     </div>
                   </Link>
@@ -810,7 +781,7 @@ function Dashboard() {
                           </h4>
                         </div>
                       </div>
-                      <h4 className="boldtext cardinfoclr">${roundoff1}</h4>
+                      <h4 className="boldtext cardinfoclr">RS. {roundoff1}</h4>
                       <h6>(days)</h6>
                     </div>
                   </Link>
